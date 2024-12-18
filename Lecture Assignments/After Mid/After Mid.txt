@@ -1,0 +1,8 @@
+After mid term
+- Segmentation 
+  Otsu's Thresholding
+  Adaptive Thresholding
+
+Edge Detection
+20 Q
+py only

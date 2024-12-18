@@ -1,0 +1,3 @@
+تم تسليمه
+from lecture of transformation to frequency domain
+solve all matirx of Fourier and Discrete cosine transform

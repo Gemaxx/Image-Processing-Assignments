@@ -1,0 +1,8 @@
+Assignment 1:
+1. Write a Python function to read image using OpenCV
+2. Implement Histogram Equalization and Contrast Stretching
+	-Explore the changes in pixel intensity distributions through histograms before and after applying each technique for each image 
+3. Implement these Filters: Averaging, Gaussian, and Median
+4. Comparison:
+	-Compare the impact of each filter on the original images and the images enhanced using histogram equalization and contrast stretching
+	-Explain any side effects introduced by the enhancement techniques and filters

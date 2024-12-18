@@ -161,5 +161,5 @@ Computational Cost: Slightly more computationally intensive than averaging filte
 Edge Preservation Trade-Off: While effective at removing noise, it can alter or distort finer textures in areas of uniform noise.
 Processing Overhead: More computationally expensive than averaging or Gaussian filters, especially for larger kernels.
 #### By Ahmed Ibrahim Metwally Negm - ID: 322223887
-#### Supervisors: Dr. Shimaa Othman, Eng. Yoser
+#### Supervisors: Dr. Shimaa Othman, Eng. Yosr
 Thank you, ✨🤎.

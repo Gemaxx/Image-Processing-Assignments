@@ -1,0 +1,14 @@
+lecture assignment before midterm:
+
+1- labeling of connected regions 
+2- image negative
+3- bit plane silicing
+4- Contrast Stretching and contrast contraction
+5- Gray level slicing
+6- Histogram Equalization 
+7- Low pass Filters: write at least 3 codes for low pass filters
+  - Linear Filters(Average, Circular, Pyramid, Cone, Gaussian)
+  - Non-Linear filters(Median Filter, Kuwahara Filter)
+8- High pass filters(Laplace, Prewitt)
+9- from lecture of transformation to frequency domain
+solve all matirx of Fourier and Discrete cosine transform

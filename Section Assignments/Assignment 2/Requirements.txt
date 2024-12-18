@@ -1,0 +1,12 @@
+Assignment 2:Image Edge Detection Using Derivative Filters
+1. Read a grayscale image as input for edge detection
+2. Implement Derivative Filters:
+	Common filters include laplacian, Sobel, Prewitt filters.
+3. Result Visualization:
+	Display the original image and the edge-detected images using each filter side by side..
+5. Comparison:
+	Discuss the strengths and weaknesses of each filter in terms of edge detection.
+
+Note for Submission(PDF file):
+The PDF should containing the code implementation, code must cover the entire implementation.
+The PDF should containing Comparison.

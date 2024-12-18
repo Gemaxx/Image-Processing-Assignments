@@ -1,0 +1,66 @@
+import numpy as np
+
+def get_neighbors(x, y, connectivity=4):
+    """
+    Get the neighboring pixels of a pixel at (x, y) based on the connectivity.
+    connectivity: 4 or 8, default is 4
+    """
+    if connectivity == 4:
+        return [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]
+    elif connectivity == 8:
+        return [(x-1, y-1), (x-1, y), (x-1, y+1), 
+                (x, y-1), (x, y+1), 
+                (x+1, y-1), (x+1, y), (x+1, y+1)]
+    else:
+        raise ValueError("Connectivity must be either 4 or 8")
+
+def is_valid(pixel, image_shape):
+    """
+    Check if the pixel is within the bounds of the image.
+    """
+    x, y = pixel
+    return 0 <= x < image_shape[0] and 0 <= y < image_shape[1]
+
+def connected_component_labeling(image, connectivity=4):
+    """
+    Label connected regions in the binary image using BFS.
+    image: binary image matrix (2D numpy array)
+    connectivity: 4 or 8, default is 4
+    """
+    label_image = np.zeros_like(image)  # output image with labels
+    label = 1  # start with label 1
+    equivalence_table = {}  # to store equivalent labels
+    
+    # Go through each pixel in the image
+    for i in range(image.shape[0]):
+        for j in range(image.shape[1]):
+            if image[i, j] == 1 and label_image[i, j] == 0:  # unlabelled foreground pixel
+                # Perform BFS to label connected region
+                queue = [(i, j)]
+                label_image[i, j] = label
+                
+                while queue:
+                    x, y = queue.pop(0)
+                    
+                    # Check neighbors
+                    neighbors = get_neighbors(x, y, connectivity)
+                    for nx, ny in neighbors:
+                        if is_valid((nx, ny), image.shape) and image[nx, ny] == 1 and label_image[nx, ny] == 0:
+                            label_image[nx, ny] = label
+                            queue.append((nx, ny))
+                
+                # Move to next label after completing the component
+                label += 1
+    
+    return label_image
+
+# Example usage
+binary_image = np.array([
+    [0, 0, 1, 0, 0],
+    [1, 1, 1, 0, 0],
+    [0, 0, 1, 0, 1],
+    [0, 0, 0, 1, 1]
+])
+
+labeled_image = connected_component_labeling(binary_image, connectivity=4)
+print(labeled_image)
